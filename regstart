@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+# Start Java RMI Registry
+
+RMI_REGISTRY_PORT="2345"
+RMI_REGISTRY_OPTIONS="-J-Djava.rmi.server.logCalls=true -J-Dsun.rmi.server.logLevel=VERBOSE -J-Dsun.rmi.client.logCalls=true -J-Dsun.rmi.client.logLevel=VERBOSE"
+CLASSPATH="./dcsp.jar"
+
+export CLASSPATH
+
+echo -e "Starting RMI registry...\n"
+rmiregistry $RMI_REGISTRY_OPTIONS $RMI_REGISTRY_PORT
+echo
+
